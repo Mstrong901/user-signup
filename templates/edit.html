@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+    
+<h2>Signup</h2>
+<form action = "/register" method="POST">
+    <table>
+        <tbody>
+            <tr>    <!--Username Input-->
+                <td>
+                    <label for="username">Username:</label>
+                </td>
+                <td>
+                    <input type="text" name="username" id="username" value="{{username}}"/>
+                    <span class="error">{{username_error}}</span>
+                </td>
+            </tr>  
+
+            <tr>    <!--Password Input-->
+                <td>
+                    <label for="password">Password:</label>
+                </td>
+                <td>
+                    <input type="password" name="password" id="password" value="" >
+                    <span class="error">{{ password_error }}</span>
+                </td>
+            </tr>
+
+            <tr>    <!--Password Verification-->
+                <td>
+                    <label for="password2">Verify Password:</label>
+                </td>
+                <td>
+                    <input type="password" name="password2" id="password2" value="">
+                    <span class="error">{{ passwordverify_error }}</span>
+                </td>
+            </tr>
+
+            <tr>    <!--Email Input-->
+                <td>
+                    <label for="email">Email (optional):</label>
+                </td>
+                <td>
+                    <input type="text" name="email" id="email" value="{{email}}">
+                    <span class="error">{{ eamil_error }}</span>
+                    <span class="error">{{ email_error2 }}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+<input type="submit" value="submit"/>
+</form>
+{% endblock %}
